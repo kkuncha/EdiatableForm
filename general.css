@@ -1,0 +1,19 @@
+body{background:#fff;border:solid 1px #ccc;border-radius:4px;margin:10px}
+.conatiner{padding:20px;}
+h1{border-bottom:1px solid #ccc;padding:0 0 10px 20px}
+.w_wrapper{ 
+	background: none repeat scroll 0 0 #F3FFF9;
+    border-radius: 6px;
+	border:solid 1px #EBF5FF;
+    height: auto;
+    padding: 30px 69px 30px 10px;
+    width: 330px;}
+	.w1_wrapper{ 
+	background: none repeat scroll 0 0 #EFF7FF;
+    border-radius: 6px;
+	border:solid 1px #EBF5FF;
+    height: auto;
+    padding: 30px 69px 30px 10px;
+    width: 330px;}
+.debug{padding:10px;display:none}
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline Editor Widget</title>
+    <!-- Bootstrap 3 css -->
+    <link href="angular-xeditable/css/bootstrap.min.css" rel="stylesheet">
+	
+    <!-- Angular.js / jquery / bootstrap library -->
+     <script src="angular-xeditable/js/angular.min.js"></script>
+	 <script src="angular-xeditable/js/jquery-1.3.2.min.js"></script>
+	
+    <!-- Angular-xeditable -->
+    <link href="angular-xeditable/css/xeditable.css" rel="stylesheet">	
+    <script src="angular-xeditable/js/xeditable.js"></script>
+    <!-- app.js -->
+   <script src="formapp.js"></script>
+   <!--custom css-->
+   <link href="angular-xeditable/css/general.css" rel="stylesheet">
+  </head>
+<body>
+<h1>Editable form</h1>
+	<div ng-controller="Ctrl" class="conatiner">
+<!--username starts-->
+		<label>UserName:</label>
+		<div id="uname" class="widget">
+		<a href="#" editable-text="user.name" class="ng-binding">{{ user.name || "empty" }}</a>
+		<div class="debug"><div><label>Old Value</label><span  class="noldvalue"></span></div><div><label>Current Value</label><span class="ncurrentval ng-binding"></span></div> </div>
+		</div><br/>
+<!--username Ends-->
+<!--Email Starts-->
+		<label>Email:</label>
+		<div id="email"  class="widget">		
+		<a href="#" editable-email="user.email"  class="ng-binding" >{{ user.email || 'empty' }}</a>
+		<div class="debug"><div><label>Old Value</label><span  class="oldvalue"></span></div><div><label>Current Value</label><span class="currentval ng-binding"></span></div> </div>
+		</div><br/>
+		
+<!--Email Ends-->
+<!--Contact Starts-->
+		<div>
+		<label>ContactNumber:</label>
+		<div id="tel"  class="widget">	
+		<a href="#" editable-tel="user.tel" e-pattern="\d{3}\-\d{2}\-\d{2}" e-title="xxx-xx-xx"  class="ng-binding">{{ user.tel || 'empty' }}</a>	
+		<div class="debug"><div><label>Old Value</label><span  class="toldvalue"></span></div><div><label>Current Value</label><span class="tcurrentval ng-binding"></span></div> </div>
+		</div>
+		</div><br/>
+<!--Contact Ends-->
+<!--Date Starts--> 
+		<div>
+		<label>Date:</label>
+		<div id="date"  class="widget">	
+		<a href="#" editable-date="user.date"  class="ng-binding">{{ user.date || 'empty' }}</a>
+		</div>  
+		</div><br/>
+<!--Date Ends-->
+<!--Select  starts-->
+		<label>Select Your Status:</label>
+		<div ng-controller="SelectNobuttonsCtrl" id="select_value" class="widget">
+			<a href="#" editable-select="user.status"  e-ng-options="s.value as s.text for s in statuses" ng-model="DDval"  ng-change="GetValue()">
+			{{ showStatus() }}
+			</a>
+			<div class="debug"><div><label>Old Value</label><span  class="dnewValue"></span></div><div><label>Current Value</label><span class="dnewValue ng-binding">{{ showStatus() }}</span></div> </div>
+		</div>
+<!--Select  ends-->
+	</div>
+</body>
+</html> 
